@@ -583,6 +583,7 @@ public abstract class AbstractCalendarAccessor {
         accountName = "AccountName";
       } 
       cv.put(CalendarContract.Calendars.ACCOUNT_NAME, accountName);
+      cv.put(CalendarContract.Calendars.OWNER_ACCOUNT, accountName);
       cv.put(CalendarContract.Calendars.ACCOUNT_TYPE, CalendarContract.ACCOUNT_TYPE_LOCAL);
       cv.put(CalendarContract.Calendars.NAME, calendarName);
       cv.put(CalendarContract.Calendars.CALENDAR_DISPLAY_NAME, calendarName);
