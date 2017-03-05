@@ -568,7 +568,7 @@ public abstract class AbstractCalendarAccessor {
       Cursor result = contentResolver.query(evuri, new String[] {CalendarContract.Calendars._ID, CalendarContract.Calendars.NAME, CalendarContract.Calendars.CALENDAR_DISPLAY_NAME}, null, null, null);
       if (result != null) {
         while (result.moveToNext()) {
-          if (result.getString(1).equals(calendarName) || result.getString(2).equals(calendarName)) {
+          if (calendarName.equals(result.getString(1)) || calendarName.equals(result.getString(2))) {
             result.close();
             return null;
           }
