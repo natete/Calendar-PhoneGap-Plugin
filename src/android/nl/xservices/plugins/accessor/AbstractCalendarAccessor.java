@@ -586,11 +586,12 @@ public abstract class AbstractCalendarAccessor {
       cv.put(CalendarContract.Calendars.ACCOUNT_TYPE, CalendarContract.ACCOUNT_TYPE_LOCAL);
       cv.put(CalendarContract.Calendars.NAME, calendarName);
       cv.put(CalendarContract.Calendars.CALENDAR_DISPLAY_NAME, calendarName);
+      cv.put(CalendarContract.Calendars.CALENDAR_ACCESS_LEVEL, CalendarContract.Calendars.CAL_ACCESS_OWNER);
       if (calendarColor != null) {
         cv.put(CalendarContract.Calendars.CALENDAR_COLOR, Color.parseColor(calendarColor));
       }
       cv.put(CalendarContract.Calendars.VISIBLE, 1);
-      cv.put(CalendarContract.Calendars.SYNC_EVENTS, 0);
+      cv.put(CalendarContract.Calendars.SYNC_EVENTS, 1);
 
       calUri = calUri.buildUpon()
           .appendQueryParameter(CalendarContract.CALLER_IS_SYNCADAPTER, "true")
